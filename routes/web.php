@@ -27,7 +27,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function (){
     Route::get("/dashboard", [FrontendController::class, "index"]);
     Route::get("/categories", [CategoryController::class, "index"]);
     Route::get("/add-category", [CategoryController::class, "add"]);
-    Route::resource("insert-category", [CategoryController::class, "insert"]);
+    Route::POST("insert-category", [CategoryController::class, "insert"]);
     });
 
    
