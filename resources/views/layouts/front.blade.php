@@ -28,16 +28,11 @@
     @vite([])
 </head>
 
-<body class="g-sidenav-show  bg-gray-200">
-        @include('layouts.inc.sidebar')
-        <main class="main-content border-radius-lg ">
-        @include('layouts.inc.adminnav')
-
-            <div class="content container-fluid py-4">
-                @yield('content')
-            </div>
-        @include('layouts.inc.adminfooter')
-     </main>
+<body>
+    @include('layouts.inc.frontnavbar')
+    <div class="content">
+        @yield('content')
+    </div>
 
 
     {{-- script --}}
@@ -55,6 +50,7 @@
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script src="../assets/js/plugins/chartjs.min.js"></script>
+  <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   @if(session('status'))
   <script>

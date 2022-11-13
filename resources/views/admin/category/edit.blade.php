@@ -1,10 +1,10 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="card mb-3">
+{{-- <div class="card mb-3">
     <div class="card-header">
         <h4>Edit/Update categori</h4>
-    </div>
+    </div> --}}
 <div class=" card-body">
     <form action="{{url('update-category/'.$category->id)}}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -33,11 +33,11 @@
                         </label>
                       </div>
                 </div>
-                
+
                 {{-- <label for="exampleFormControlInput1" class="form-label">Status</label>
                 <input type="checkbox" class="form-control" id="exampleFormControlInput1" name="status"> --}}
             </div>
-            
+
             <div class="col-md-12 mb-2">
                 <label for="exampleFormControlInput1" class="form-label">Description</label>
                 <input rows="3" type="text" class="form-control" id="exampleFormControlInput1" name="description" value="{{ $category->description }}">

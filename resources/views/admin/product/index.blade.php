@@ -3,7 +3,7 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-        <h4>Category</h4>
+        <h4>Product Page</h4>
     </div>
     <div class="card-body">
         <div class="table-responsive p-0">
@@ -11,24 +11,26 @@
             <thead>
                 <tr>
                     <th>Id</th>
+                    <th>Category</th>
                     <th>Name</th>
-                    <th>Description</th>
+                    <th>Selling Price</th>
                     <th>Image</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($category as $item)
+                @foreach ($products as $item)
                     <tr>
                         <td>{{ $item->id }}</td>
+                        <td>{{ $item->category->name }}</td>
                         <td>{{ $item->name }}</td>
-                        <td>{{ $item->description }}</td>
+                        <td>{{ $item->selling_price }}</td>
                         <td>
-                            <img src="{{ url('/storage/app/category/'.$item->image)}}" alt="image here">
+                            <img src="{{ asset('assets/uploads/products/'.$item->image)}}" alt="image here">
                         </td>
                         <td>
-                            <a href="{{ url('edit-prod/'.$item->id)}}" class="btn btn-primary">Edit</a>
-                            <a href="{{ url('delete-category/'.$item->id)}}" class="btn btn-danger">Delete</a>
+                            <a href="{{ url('edit-products/'.$item->id) }}" class="btn btn-primary">Edit</a>
+                            <a href="{{ url('delete-products/'.$item->id) }}" class="btn btn-danger btn-sm">Delete</a>
                         </td>
                     </tr>
                 @endforeach
