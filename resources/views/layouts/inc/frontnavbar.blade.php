@@ -18,6 +18,12 @@
             <li class="nav-item">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li>
+            <li class="nav-item">
+                <a href="/login" class="nav-link" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+            </li>
+            <li class="nav-item">
+                <a href="/register" class="nav-link" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+            </li>
             </ul>
         </div>
         </div>

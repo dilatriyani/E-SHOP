@@ -28,7 +28,7 @@ class CategoryController extends Controller
             $file = $request->file('image');
             $ext = $file->getClientOriginalExtension();
             $filename = time().'.'.$ext;
-            $file->move('assets/uploads/category'.$filename);
+            $file->move('../assets/uploads/category/'.$filename);
             $category->image = $filename;
         }
         $category->name = $request->input('name');
@@ -53,7 +53,7 @@ class CategoryController extends Controller
         $category = Category::find($id);
         if($request->hasFile('image'))
         {
-            $path= 'assets/uploads/category/'.$category->image;
+            $path= '../assets/uploads/category/'.$category->image;
             if(File::exists($path))
             {
                 File::delete($path);
@@ -61,7 +61,7 @@ class CategoryController extends Controller
             $file = $request->file('image');
             $ext = $file->getClientOriginalExtension();
             $filename = time().'.'.$ext;
-            $file->move('assets/uploads/category'.$filename);
+            $file->move('../assets/uploads/category/'.$filename);
             $category->image = $filename;
         }
         $category->name = $request->input('name');
@@ -81,7 +81,7 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
         if($category->image)
-        { $path= 'assets/uploads/category/'.$category->image;
+        { $path= '../assets/uploads/category/'.$category->image;
             if(File::exists($path))
             {
                 File::delete($path);

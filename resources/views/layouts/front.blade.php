@@ -16,6 +16,11 @@
 <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
 <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
 
+<link rel="stylesheet" href="{{ asset('frontend/css/boostrap5.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/css/owl.carousel.min.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/css/owl.theme.default.min.css') }}">
+
 <!-- Font Awesome Icons -->
 <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
 
@@ -36,7 +41,9 @@
 
 
     {{-- script --}}
-
+<script src="{{ asset('frontend/js/jquery-3.6.1.min.js') }}"></script>
+<script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('frontend/js/owl.carousel.min.js') }}"></script>
 
   <!--   Core JS Files   -->
 
@@ -317,7 +324,7 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/material-dashboard.min.js?v=3.0.4"></script>
-  @yield('script')
+  @yield('scripts')
 </body>
 
 </html>
