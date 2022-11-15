@@ -24,7 +24,7 @@
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->description }}</td>
                         <td>
-                            <img src="{{ asset('assets/uploads/category/'.$item->image)}}" alt="image here">
+                            <img src="{{ asset('../assets/uploads/category/'.$item->image)}}" alt="image here" style="width:50px; height:50px">
                         </td>
                         <td>
                             <a href="{{ url('edit-prod/'.$item->id)}}" class="btn btn-primary">Edit</a>
@@ -37,5 +37,5 @@
         </div>
     </div>
 </div>
-    
+
 @endsection

@@ -17,9 +17,10 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('cate_id');
             $table->string('name');
+            $table->string('slug');
             $table->mediumText('small_description');
-            $table->string('description');
-            $table->string('original_price');
+            $table->longText('description');
+            $table->string('origin_price');
             $table->string('selling_price');
             $table->string('image');
             $table->string('qty');

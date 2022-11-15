@@ -28,7 +28,7 @@ class CategoryController extends Controller
             $file = $request->file('image');
             $ext = $file->getClientOriginalExtension();
             $filename = time().'.'.$ext;
-            $file->move('assets/uploads/category'.$filename);
+            $file->move('../assets/uploads/category/'.$filename);
             $category->image = $filename;
         }
         $category->name = $request->input('name');
@@ -37,11 +37,11 @@ class CategoryController extends Controller
         $category->status = $request->input('status') == TRUE ? '1':'0';
         $category->popular = $request->input('popular')  == TRUE ? '1':'0';
         $category->meta_tittle = $request->input('meta_tittle');
-        $category->image = $request->String('image');
+        // $category->image = $request->String('image');
         $category->meta_keywords = $request->input('meta_keywords');
         $category->meta_descrip = $request->input('meta_descrip');
         $category->save();
-        return redirect('/dashboard')->with('status', "Category added successfully");
+        return redirect('categories')->with('status', "Category added successfully");
     }
     public function edit($id)
     {
@@ -53,7 +53,7 @@ class CategoryController extends Controller
         $category = Category::find($id);
         if($request->hasFile('image'))
         {
-            $path= 'assets/uploads/category/'.$category->image;
+            $path= '../assets/uploads/category/'.$category->image;
             if(File::exists($path))
             {
                 File::delete($path);
@@ -61,7 +61,7 @@ class CategoryController extends Controller
             $file = $request->file('image');
             $ext = $file->getClientOriginalExtension();
             $filename = time().'.'.$ext;
-            $file->move('assets/uploads/category'.$filename);
+            $file->move('../assets/uploads/category/'.$filename);
             $category->image = $filename;
         }
         $category->name = $request->input('name');
@@ -70,7 +70,7 @@ class CategoryController extends Controller
         $category->status = $request->input('status') == TRUE ? '1':'0';
         $category->popular = $request->input('popular')  == TRUE ? '1':'0';
         $category->meta_tittle = $request->input('meta_tittle');
-        $category->image = $request->String('image');
+        // $category->image = $request->String('image');
         $category->meta_keywords = $request->input('meta_keywords');
         $category->meta_descrip = $request->input('meta_descrip');
         $category->update();
@@ -81,7 +81,7 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
         if($category->image)
-        { $path= 'assets/uploads/category/'.$category->image;
+        { $path= '../assets/uploads/category/'.$category->image;
             if(File::exists($path))
             {
                 File::delete($path);
