@@ -8,13 +8,23 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
-    <link href="{{ asset ('admin/css/cutom.css') }}" rel="stylesheet">
- <!--     Fonts and icons     -->
- <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
- <link href="{{ asset ('admin/css/cutom.css') }}" rel="stylesheet">
-<!-- Nucleo Icons -->
-<link href="{{asset('/assets/css/nucleo-icons.css')}}" rel="stylesheet" />
-<link href="{{ asset('/assets/css/nucleo-svg.css')}}" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+    <!-- CSS Files -->
+    <link href="../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
+
+    <link rel="stylesheet" href="{{ asset('assets/css/material-dashboard.css') }}">
+    {{-- <link href="{{ asset ('frontend/css/custom.css') }}" rel="stylesheet"> --}}
+
+
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+    <link href="{{ asset ('admin/css/custom.css') }}" rel="stylesheet">
+    <!-- Nucleo Icons -->
+    <link href="{{asset('/assets/css/nucleo-icons.css')}}" rel="stylesheet" />
+    <link href="{{ asset('/assets/css/nucleo-svg.css')}}" rel="stylesheet" />
 
 <!-- Font Awesome Icons -->
 <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>

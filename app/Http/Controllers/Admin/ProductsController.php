@@ -30,7 +30,7 @@ class ProductsController extends Controller
             $file = $request->file('image');
             $ext = $file->getClientOriginalExtension();
             $filename = time().'.'.$ext;
-            $file->move('assets/uploads/products'.$filename);
+            $file->move('assets/uploads/products/'.$filename);
             $products->image = $filename;
         }
         $products->cate_id = $request->input('cate_id');
@@ -63,7 +63,7 @@ class ProductsController extends Controller
         $products = Product::find($id);
         if($request->hasFile('image'))
         {
-            $path = 'assets/uploads/products/'.$products->image;
+            $path = 'assets/uploads/products//'.$products->image;
             if(File::exists($path))
             {
                 File::delete($path);
@@ -71,7 +71,7 @@ class ProductsController extends Controller
             $file = $request->file('image');
             $ext = $file->getClientOriginalExtension();
             $filename = time().'.'.$ext;
-            $file->move('assets/uploads/products'.$filename);
+            $file->move('assets/uploads/products/'.$filename);
             $products->image = $filename;
         }
         $products->name = $request->input('name');
@@ -95,7 +95,7 @@ class ProductsController extends Controller
     public function destroy($id)
     {
         $products = Product::find($id);
-        $path = 'assets/uploads/products/'.$products->image;
+        $path = 'assets/uploads/products//'.$products->image;
         if(File::exists($path))
         {
             File::delete($path);

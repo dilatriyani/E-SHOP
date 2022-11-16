@@ -22,7 +22,12 @@
                 @foreach ($products as $item)
                     <tr>
                         <td>{{ $item->id }}</td>
-                        <td>{{ $item->category}}</td>
+                        {{-- <td>{{ $item->category }}</td> --}}
+                        <td>
+                            @foreach ( $products as $category)
+                           {{ $category->name }}
+                            @endforeach
+                        </td>
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->selling_price }}</td>
                         <td>
